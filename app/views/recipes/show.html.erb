@@ -1,0 +1,48 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.user.name%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @recipe.category %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @recipe.instructions %>
+</p>
+
+<p>
+  <strong>Minutes to prepare:</strong>
+  <%= @recipe.minutes_to_prepare %>
+</p>
+
+<p>
+  <strong>Minutes to cook:</strong>
+  <%= @recipe.minutes_to_cook %>
+</p>
+<p>
+  <strong>Total minutes needed:</strong>
+  <%= @recipe.minutes_total %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag (@recipe.picture_url), :width=>200 %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Home', recipes_path %>

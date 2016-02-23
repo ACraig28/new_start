@@ -1,0 +1,51 @@
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :ingredients %><br>
+    <%= f.text_area :ingredients, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :minutes_to_prepare %><br>
+    <%= f.number_field :minutes_to_prepare, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :minutes_to_cook %><br>
+    <%= f.number_field :minutes_to_cook, class: "form-control"  %>
+  </div>
+   <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id, value: current_user.id %>
+ </div>
+  
+  <div class="actions btn btn-primary">
+    <%= f.submit %>
+  </div>
+<% end %>
